@@ -1,8 +1,8 @@
 package com.app.bobedst.model;
 
-public class Properties extends Location{
+public class Properties{
 
-    private long id;
+    //private long id;
     private double size;
     private double rent;
     private Location location;
@@ -13,10 +13,11 @@ public class Properties extends Location{
     private double paymentToHeat;
     private double paymentToWater;
 
-    public Properties(long id, double size, double rent, Location location, int room, double deposit, double prepaidRent, boolean availableToRent, double paymentToHeat, double paymentToWater) {
-        super(id, road, addressNumber, postNumber, city);
+    public Properties() {
+    }
 
-        this.id = id;
+    public Properties(double size, double rent, Location location, int room, double deposit, double prepaidRent, boolean availableToRent, double paymentToHeat, double paymentToWater) {;
+
         this.size = size;
         this.rent = rent;
         this.location = location;
