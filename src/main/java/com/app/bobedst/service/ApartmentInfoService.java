@@ -22,14 +22,14 @@ public class ApartmentInfoService implements IApartmentInfoService {
     }
 
     @Override
-    public ApartmentInfo save(ApartmentInfo object) {
-        apartmentInfoRepository.save(object);
-        return object;
+    public ApartmentInfo save(ApartmentInfo info) {
+        apartmentInfoRepository.save(info);
+        return info;
     }
 
     @Override
-    public Optional<ApartmentInfo> findById(Long aLong) {
-        return Optional.empty();
+    public Optional<ApartmentInfo> findById(Long id) {
+        return apartmentInfoRepository.findById(id);
     }
 
     @Override
