@@ -1,6 +1,5 @@
 package com.app.bobedst.service;
 
-import com.app.bobedst.model.Apartment;
 import com.app.bobedst.model.ApartmentInfo;
 import com.app.bobedst.repository.ApartmentInfoRepository;
 import org.junit.jupiter.api.Assertions;
@@ -17,11 +16,30 @@ class ApartmentInfoServiceTest {
     private ApartmentInfoRepository apartmentInfoRepository;
 
     @Test
-    void save() {
+
+    @BeforeEach
+    public void setUp(){
+        apartmentInfoService = new ApartmentInfoService(apartmentInfoRepository);
+    }
+
+    @Test
+    void saveInfo() {
         ApartmentInfo apartmentInfo = new ApartmentInfo(1L, "Beliggende ved en sø");
 
         ApartmentInfo savedInfo = apartmentInfoRepository.save(apartmentInfo);
 
         Assertions.assertEquals(1L, 1L);
     }
+
+    /**@Test
+    void findApartmentById() {
+
+        ApartmentInfo apartmentInfo = new ApartmentInfo(1L, "Huset er koldt");
+
+        ApartmentInfo findApartmentId = apartmentInfoService.findById();
+
+        Assertions.assertEquals(1, findApartmentId);
+
+    }
+    **/
 }
