@@ -1,6 +1,7 @@
 package com.app.bobedst.model;
 
 import lombok.*;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import javax.persistence.*;
 @Data
