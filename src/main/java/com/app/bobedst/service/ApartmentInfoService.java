@@ -12,10 +12,6 @@ public class ApartmentInfoService implements IApartmentInfoService {
 
     private ApartmentInfoRepository apartmentInfoRepository;
 
-    public ApartmentInfoService(ApartmentInfoRepository apartmentInfoRepository) {
-        this.apartmentInfoRepository = apartmentInfoRepository;
-    }
-
     @Override
     public Set<ApartmentInfo> findAll() {
         return null;
