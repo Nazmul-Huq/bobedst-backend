@@ -20,7 +20,7 @@ public class Apartment extends Properties {
     @Column(name = "storage_room",
     nullable = false)
     private boolean storageRoom;
-    @Column(name = "priavte_garden",
+    @Column(name = "private_garden",
     nullable = false)
     private boolean privateGarden;
     @Column(name = "laundry_room",
@@ -32,6 +32,7 @@ public class Apartment extends Properties {
     @Column(name = "apartment_number",
     nullable = false)
     private String apartmentNumber;
+    private String text;
 
     /*public Apartment(boolean storageRoom, boolean privateGarden, boolean laundryRoom, String floor, String apartmentNumber, long id, double size, double rent, Location location, int room, double deposit, double prepaidRent, boolean availableToRent, double paymentToHeat, double paymentToWater) {
         super(id, size, rent, location, room, deposit, prepaidRent, availableToRent, paymentToHeat, paymentToWater);

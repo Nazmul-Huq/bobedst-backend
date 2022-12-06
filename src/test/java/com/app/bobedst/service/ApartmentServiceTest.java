@@ -1,7 +1,7 @@
 package com.app.bobedst.service;
 
-import com.app.bobedst.model.ApartmentInfo;
-import com.app.bobedst.repository.ApartmentInfoRepository;
+import com.app.bobedst.model.Apartment;
+import com.app.bobedst.repository.ApartmentRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,24 +9,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 @DataJpaTest()
-class ApartmentInfoServiceTest {
+class ApartmentServiceTest {
 
-    private ApartmentInfoService apartmentInfoService;
+    private ApartmentService apartmentService;
     @Autowired
-    private ApartmentInfoRepository apartmentInfoRepository;
+    private ApartmentRepository apartmentRepository;
 
     @Test
 
     @BeforeEach
     public void setUp(){
-        apartmentInfoService = new ApartmentInfoService(apartmentInfoRepository);
+        apartmentService = new ApartmentService(apartmentRepository);
     }
 
     @Test
     void saveInfo() {
-        ApartmentInfo apartmentInfo = new ApartmentInfo(1L, "Beliggende ved en sø");
+        Apartment apartment = new Apartment(1L, "Beliggende ved en sø");
 
-        ApartmentInfo savedInfo = apartmentInfoRepository.save(apartmentInfo);
+        Apartment savedApartment = apartmentRepository.save(apartment);
 
         Assertions.assertEquals(1L, 1L);
     }
