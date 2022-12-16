@@ -44,6 +44,6 @@ public class ApartmentController {
 
         return "apartmentAvailability";
     }
-
+    //mo
 
 }
