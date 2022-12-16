@@ -1,15 +1,18 @@
 package com.app.bobedst.service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
 public interface CRUDservice<T, ID> {
 
     //Create
-    Set<T> findAll();
+    List<T> findAll(); //<--
+
+    //omvendt
 
     //Read
-    T save(T object);
+    T save(T object); //<--
 
     Optional<T> findById(ID id);
 
@@ -20,5 +23,7 @@ public interface CRUDservice<T, ID> {
 
     //Update
     T update(T object);
+
+    boolean isApartmentAvailable (long apartmentId);
 
 }

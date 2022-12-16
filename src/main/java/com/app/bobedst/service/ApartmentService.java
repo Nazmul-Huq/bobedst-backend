@@ -2,14 +2,20 @@ package com.app.bobedst.service;
 
 import com.app.bobedst.model.Apartment;
 import com.app.bobedst.repository.ApartmentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
 @Service
 public class ApartmentService implements IApartmentService {
-
+    @Autowired
     private ApartmentRepository apartmentRepository;
 
     public ApartmentService(ApartmentRepository apartmentRepository) {
@@ -17,8 +23,8 @@ public class ApartmentService implements IApartmentService {
     }
 
     @Override
-    public Set<Apartment> findAll() {
-        return null;
+    public List<Apartment> findAll() {
+        return apartmentRepository.findAll();
     }
 
     @Override
@@ -46,4 +52,11 @@ public class ApartmentService implements IApartmentService {
     public Apartment update(Apartment object) {
         return null;
     }
+
+    @Override
+    public boolean isApartmentAvailable(long apartmentId) {
+        return false;
+    }
+
+
 }
